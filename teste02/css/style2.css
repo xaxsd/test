@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-size: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: black;
+}
+
+.container .img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Стиль для кожного зображення */
+.container .img-container .img {
+    width: 350px;
+    height: 250px;
+    border: 10 solid white;
+    overflow: hidden;
+}

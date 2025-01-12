@@ -1,0 +1,208 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --header-bg: #333333;
+    --header-text: #ffffff;
+    --link-hover-bg: rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme {
+    --bg-color: #333333;
+    --text-color: #ffffff;
+    --header-bg: #1a1a1a;
+    --header-text: #ffffff;
+    --link-hover-bg: rgba(255, 255, 255, 0.2);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 1rem;
+}
+
+nav ul li a {
+    color: var(--header-text);
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h1, h2 {
+    color: var(--text-color);
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.image-container img {
+    margin: 1rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-container img:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#theme-toggle {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-menu > li {
+    position: relative;
+    margin-right: 1rem;
+}
+
+.nav-menu a {
+    color: var(--header-text);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+/* Випадаюче меню */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--header-bg);
+    min-width: 150px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu a {
+    padding: 0.5rem 1rem;
+    color: var(--header-text);
+}
+
+/* Показуємо випадаюче меню при наведенні */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Стиль для активного елементу меню */
+.nav-menu > li > a:hover,
+.dropdown-menu a:hover {
+    background-color: var(--link-hover-bg);
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-menu li {
+        margin-bottom: 1rem;
+    }
+
+    .image-container {
+        flex-direction: column;
+    }
+
+    .image-container img {
+        margin: 10px 0;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #theme-toggle {
+        margin-top: 10px;
+    }
+}
+
+/* Стилі для планшетів */
+@media (max-width: 1024px) {
+    .nav-menu {
+        flex-direction: row;
+    }
+
+    .image-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .image-container img {
+        width: 100%;
+        max-width: 200px;
+        margin: 10px;
+    }
+}
+
+/* Стилі для великих екранів (десктопи) */
+@media (min-width: 1025px) {
+    .image-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .image-container img {
+        width: 200px;
+        margin: 1rem;
+    }
+}

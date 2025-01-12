@@ -1,0 +1,5 @@
+[
+    { "src": "../acura.jpg", "alt": "Image 1", "category": "Cars" },
+    { "src": "../alfa.jpg", "alt": "Image 2", "category": "Cars" },
+    { "src": "../aston.jpg", "alt": "Image 3", "category": "Cars" }
+]

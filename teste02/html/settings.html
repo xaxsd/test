@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="body light-theme">
+    <header>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="statistics.html">Statistics</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li class="dropdown">
+                    <a href="#">1</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#nature">Nature</a></li>
+                        <li><a href="#urban">Urban</a></li>
+                        <li><a href="#abstract">Abstract</a></li>
+                    </ul>
+                </li>                
+            </ul>
+        </nav>
+        <button id="theme-toggle">Toggle Theme</button>
+    </header>
+
+    <main>
+        <section id="home">
+            <h1>Welcome to My Website</h1>
+            <p>This is a simple website with HTML, CSS, and JavaScript.</p>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are a company dedicated to creating amazing websites.</p>
+        </section>
+    </main>  
+
+    <div id="settings-container">
+        <h2>User Settings</h2>
+        <form id="settings-form">
+            <label>
+                <span>Username:</span>
+                <input type="text" id="username" />
+            </label>
+            <label>
+                <span>Preferred Language:</span>
+                <select id="language">
+                    <option value="en">English</option>
+                    <option value="uk">Ukrainian</option>
+                </select>
+            </label>
+            <button type="button" id="save-settings">Save</button>
+        </form>
+    </div>    
+
+    <footer>
+        <p>##################################################</p>
+    </footer>
+</body>
+</html>

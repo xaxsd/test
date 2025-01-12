@@ -1,0 +1,7 @@
+{
+    "contactReasons": {
+        "general": ["Name", "Email", "Message"],
+        "support": ["Name", "Email", "Order ID", "Issue"],
+        "feedback": ["Name", "Email", "Feedback"]
+    }
+}

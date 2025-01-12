@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Анімована форма входу, HTML, CSS</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="../css/login.css">
+
+</head>
+
+<body>
+
+    <section>
+        <div class="main">
+
+            <span class="border"></span>
+            <span class="border"></span>
+
+            <div class="form">
+
+                <!-- Додано id для форми -->
+                <form id="loginForm">
+
+                    <h2>Log In</h2>
+
+                    <div>
+                        <!-- Додано id для полів -->
+                        <input type="text" id="email" required="required">
+                        <span>Email</span>
+                        <i></i>
+                    </div>
+
+                    <div>
+                        <input type="password" id="password" required="required">
+                        <span>Password</span>
+                        <i></i>
+                    </div>
+
+                    <input type="submit" value="Entrar">
+
+                </form>
+
+                <ul>
+                    <li>Забули пароль?</li>
+                    <li>Реєстрація</li>
+                </ul>
+
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        // Отримуємо форму за id
+        const loginForm = document.getElementById("loginForm");
+
+        loginForm.addEventListener("submit", function(event) {
+            event.preventDefault(); // Запобігає перезавантаженню сторінки
+
+            // Отримання введених даних
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            // Простий приклад перевірки (замініть на реальну перевірку)
+            if (email === "user@example.com" && password === "password123") {
+                alert("Вхід успішний!");
+                // Редірект на іншу сторінку
+                window.location.href = "index.html"; // Вкажіть потрібну URL-адресу
+            } else {
+                alert("Невірна пошта або пароль!");
+            }
+        });
+    </script>
+
+</body>
+
+</html>

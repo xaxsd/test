@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos e Condições</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #555;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            color: #444;
+        }
+        #terms-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        #accept-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #accept-btn:hover {
+            background-color: #45a049;
+        }
+        #status-message {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Termos e Condições</h1>
+    <div id="terms-container"></div>
+    <button id="accept-btn">Aceitar Termos</button>
+    <div id="status-message"></div>
+
+    <script>
+        // Умови зберігаються в JavaScript
+        const terms = [
+            {
+                title: "Introdução",
+                content: "Bem-vindo aos nossos Termos e Condições. Leia atentamente este documento antes de usar nossos serviços."
+            },
+            {
+                title: "Uso Permitido",
+                content: "Você pode usar o site apenas de acordo com as leis aplicáveis e estas condições de uso."
+            },
+            {
+                title: "Limitação de Responsabilidade",
+                content: "Nós não somos responsáveis por quaisquer danos causados pelo uso indevido do site."
+            }
+        ];
+
+        // Відображення умов на сторінці
+        const termsContainer = document.getElementById('terms-container');
+        terms.forEach(term => {
+            const sectionDiv = document.createElement('div');
+            sectionDiv.classList.add('section');
+
+            const title = document.createElement('h2');
+            title.textContent = term.title;
+
+            const content = document.createElement('p');
+            content.textContent = term.content;
+
+            sectionDiv.appendChild(title);
+            sectionDiv.appendChild(content);
+
+            termsContainer.appendChild(sectionDiv);
+        });
+
+        // Логіка прийняття умов
+        const acceptBtn = document.getElementById('accept-btn');
+        const statusMessage = document.getElementById('status-message');
+
+        acceptBtn.addEventListener('click', () => {
+            // Зберегти в localStorage, що умови прийнято
+            localStorage.setItem('termsAccepted', 'true');
+
+            // Показати повідомлення про прийняття
+            statusMessage.textContent = "Obrigado por aceitar os Termos e Condições.";
+            statusMessage.style.color = "green";
+
+            // Приховати кнопку після прийняття
+            acceptBtn.style.display = "none";
+        });
+
+        // Перевірити, чи умови вже були прийняті
+        const termsAccepted = localStorage.getItem('termsAccepted');
+        if (termsAccepted === 'true') {
+            // Якщо прийнято, показати повідомлення і приховати кнопку
+            statusMessage.textContent = "Você já aceitou os Termos e Condições.";
+            statusMessage.style.color = "blue";
+            acceptBtn.style.display = "none";
+        }
+    </script>
+</body>
+</html>
